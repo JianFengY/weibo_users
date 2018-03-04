@@ -71,7 +71,6 @@ class WeiboSpider(scrapy.Spider):
 
     def parse_fans(self, response):
         """获取粉丝列表"""
-        pass
         cards = json.loads(response.text).get('data').get('cards')
         if cards:  # 判断是否获取完全部粉丝
             result = cards[0].get('card_group')
